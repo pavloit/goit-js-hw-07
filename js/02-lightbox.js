@@ -14,16 +14,18 @@ const markup = galleryItems.map(({ description, original, preview }) => `
 </li>
 `).join("");
 
+
 gallery.innerHTML = markup;
+const lightbox = new SimpleLightbox('.gallery a', {
+        captionsData: 'alt',
+        captionPosition: 'bottom',
+        captionDelay: 250,
+    });
 gallery.addEventListener('click', handlerClick)
 function handlerClick(event) {
     event.preventDefault();
     if (!event.target.classList.contains('gallery__image')) {
         return
     }
-    return new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionPosition: 'bottom',
-        captionDelay: 250,
-    });
+  return lightbox;
 }

@@ -42,3 +42,8 @@
 .gallery__link:hover {
   cursor: zoom-in;
 }
+
+.caption {
+  text-align: center;
+  background-color: rgba(26, 24, 6, 0.399) !important;
+}

@@ -26,8 +26,8 @@ function handlerClick(event) {
     <img src="${event.target.dataset.source}">
     `);
     modal.show();
-    document.onkeydown = evt => {
-        if (evt.key === "Escape") {
+    document.onkeydown = ({ code }) => {
+        if (code === "Escape") {
             modal.close();
         }
     }

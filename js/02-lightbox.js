@@ -2,7 +2,7 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const gallery = document.querySelector(".gallery");
-const markup = galleryItems.map(({ description, original, preview }) => `
+gallery.innerHTML = galleryItems.map(({ description, original, preview }) => `
 <li class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
@@ -14,8 +14,6 @@ const markup = galleryItems.map(({ description, original, preview }) => `
 </li>
 `).join("");
 
-
-gallery.innerHTML = markup;
 new SimpleLightbox('.gallery a', {
         captionsData: 'alt',
         captionPosition: 'bottom',
